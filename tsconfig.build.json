@@ -1,4 +1,6 @@
 {
   "extends": "./tsconfig.json",
+  // note: used "rootDir" instead to preserve folder structure.
+  //"include": ["./migrations", "./src"], 
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }
