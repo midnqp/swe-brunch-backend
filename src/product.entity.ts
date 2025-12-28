@@ -1,7 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
 @Entity()
-export class Product {
+export class Product extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -17,5 +17,7 @@ export class Product {
   @Column('text')
   description: string;
 
-  // todo: product belongsto menu. menu hasmany product.
+  //'eng' | 'pm' | 'founder'
+  @Column()
+  menu: string
 }
