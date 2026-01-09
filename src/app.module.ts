@@ -14,7 +14,10 @@ import { Product } from './product.entity';
     TypeOrmModule.forRoot({
       type: 'postgres',
       // note: stupidity that costed an evening.
+      // but, why the db conn being made in prod at render?
+      // why not in localhost in any way?
       url: process.env.DB_URL,
+      ssl: false,
       entities: [Product],
     }),
 
