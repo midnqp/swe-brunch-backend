@@ -8,13 +8,13 @@ import { HttpRequestLoggerMiddleware } from './logger.middleware';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './product.entity';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      username: 'swebrunchuser',
-      password: 'password',
-      database: 'swebrunch',
+      // note: stupidity that costed an evening.
+      url: process.env.DB_URL,
       entities: [Product],
     }),
 
